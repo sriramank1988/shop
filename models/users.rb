@@ -3,7 +3,6 @@
 require 'pg'
 require 'bcrypt'
 require_relative '../shared.rb'
-require 'pry'
 
 
 #create - CRUD

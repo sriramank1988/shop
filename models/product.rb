@@ -1,4 +1,3 @@
-require 'pry'
 def create_product(product_code,name,image_url,quantity_on_hand)
     sql = <<~SQL 
         INSERT INTO product
