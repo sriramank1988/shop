@@ -1,4 +1,9 @@
 require 'sinatra'
+require_relative 'shared.rb'
+require_relative 'models/users.rb'
+require_relative 'models/product.rb'
+require_relative 'controllers/product.rb'
+require_relative 'controllers/user.rb'
 if development?
   require 'sinatra/reloader'
   require 'pry'
@@ -8,13 +13,8 @@ if development?
   also_reload 'controllers/product.rb'
   also_reload 'controllers/user.rb'
 end
-require_relative 'shared.rb'
-  require_relative 'models/users.rb'
-  require_relative 'models/product.rb'
-  require_relative 'controllers/product.rb'
-  require_relative 'controllers/user.rb'
-  
 enable :sessions
+  
 
 get '/' do
   session[:role] = nil
