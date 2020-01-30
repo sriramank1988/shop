@@ -1,0 +1,22 @@
+
+<div class="flexwrap">
+    <div>
+        <img src="<%= @product["image_url"]%>" alt="">
+    </div>
+    <div>
+        Product code: <%= @product["product_code"]%> <br>
+        Name: <%= @product["name"]%> <br>
+        Quantity on hand: <%= @product["quantity_on_hand"]%>
+
+        <% if admin_logged_in?%>
+            <a href="/product/update/<%= @product["product_code"]%>">Update</a>
+            <form action="/product/delete/<%= @product["product_code"]%>" method='post'>
+                <input type="hidden" name="_method" value="delete">
+            <button>delete</button>
+            </form>
+
+        <% end %>
+    </div>
+</div>
+
+

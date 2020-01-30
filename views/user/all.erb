@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Role</th>
+    <th>Options</th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+        <td><%=user['email']%></td>
+        <td><%=user['user_role']%></td>
+        <td>options</td>
+    </tr>
+  <%end%>
+</table>

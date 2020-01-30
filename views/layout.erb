@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Bolts and Nuts shop</title>
+    <link rel='stylesheet' href='/stylesheets/main.css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <%if session[:role] != nil %>
+      <div>
+        <form action="/session" method='post' class="logout">
+          <input type="hidden" name="_method" value="delete">
+          <button>Logout</button>
+        </form>
+      </div>
+    <%end%>
+    <%= yield %>
+  </body>
+</html>
