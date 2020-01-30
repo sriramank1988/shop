@@ -61,3 +61,17 @@ def show_all_users
     sql = "SELECT id, email, user_role FROM users;"
     run_sql(sql, [])
 end
+
+def find_user_by_id(id)
+    sql = "SELECT * FROM users where id = $1;"
+    run_sql(sql, [id])[0]
+end
+
+def update_by_id(id,email,role)
+    sql = <<~SQL
+        UPDATE users
+        SET email = $1, user_role = $2
+        WHERE id = $3;
+    SQL
+    run_sql(sql,[email,role,id])
+end

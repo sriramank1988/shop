@@ -1,3 +1,4 @@
+<h2>List of All Users</h2>
 <table>
   <tr>
     <th>Email</th>
@@ -8,7 +9,13 @@
     <tr>
         <td><%=user['email']%></td>
         <td><%=user['user_role']%></td>
-        <td>options</td>
+        <% if user['user_role'] == 'admin' %>
+            <td>Not Applicable</td>
+        <%else%>
+            <td>            
+                <a href="/user/update/<%= user["id"]%>">Update</a>
+            </td>
+        <%end%>
     </tr>
   <%end%>
 </table>

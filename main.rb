@@ -4,6 +4,7 @@ require_relative 'models/users.rb'
 require_relative 'models/product.rb'
 require_relative 'controllers/product.rb'
 require_relative 'controllers/user.rb'
+require_relative 'controllers/orders.rb'
 if development?
   require 'sinatra/reloader'
   require 'pry'
@@ -17,8 +18,14 @@ enable :sessions
   
 
 get '/' do
-  session[:role] = nil
-  erb :index
+  if session[:role] == 'admin'
+    redirect '/admin'
+  elsif session[:role] == 'customer'
+    redirect '/customer'
+  else  
+    resetsession()
+    erb :index
+  end
 end
 
 post '/' do
@@ -36,6 +43,8 @@ end
 
 get '/customer' do
   if session[:role] == 'customer'
+    initialize_cart()
+    @products = show_all_product()
     erb :customer
   else
     resetsession()

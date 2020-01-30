@@ -6,6 +6,17 @@ get '/product/new' do
       redirect '/'
     end
 end
+
+get '/product/all' do
+  if session[:role] != nil
+    @products = list_all_product()
+    erb :"product/all"
+  else
+    resetsession()
+    redirect '/'
+  end
+  
+end
   
 post '/product/new' do
     if admin_logged_in?

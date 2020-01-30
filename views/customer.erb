@@ -4,3 +4,11 @@
 </div>
 <div class="shopping_cart">Shopping Cart logic</div>
 
+<div class="grid">
+    <% @products.each do |product|%>
+        <div class="productwrap"><a href="/product/<%=product["product_code"]%>">
+            <img src="<%=product["image_url"]%>" alt="">
+            <p><%=product["name"]%></p></a>
+        </div>
+    <% end%>
+</div>

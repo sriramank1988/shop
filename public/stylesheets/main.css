@@ -13,6 +13,7 @@ body{
     background-color: antiquewhite;
 }
 .flexwrap{
+    
     display: flex;
     justify-content: space-evenly;
     padding: 10px;
@@ -25,6 +26,10 @@ body{
     position: fixed;
     right: 5px;
 }
+.home-btn{
+    position: fixed;
+    left: 5px;
+}
 button{
     padding: 5px;
 }
@@ -32,6 +37,21 @@ img{
     width: 200px;
     height: 200px;
 }
+
 table, th, td {
+    margin-left:auto; 
+    margin-right:auto;
+    text-align: center;
     border: 1px solid black;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 5px;
+}
+.product_description{
+    padding-top: 100px;
+}
+h2{
+    text-align: center;
 }

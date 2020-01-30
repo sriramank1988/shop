@@ -11,3 +11,10 @@ def resetsession()
     session[:user_id] = nil  
     session[:role] = nil 
 end
+
+def initialize_cart()
+    session[:cart] = {
+        :product_name => [],
+        :quantity => []
+    }
+end

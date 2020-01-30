@@ -1,0 +1,11 @@
+<h2>User update page</h2>
+<form action="/user/update/<%= @user["id"]%>" method='post'>
+    <input type="hidden" name="_method" value="patch"><br>
+    <label for="code">Email:</label>
+    <input type="text" name = "email" value = "<%= @user["email"]%>" required><br>
+    <label for="psw">Password</label>
+    <a href="/user/pwd/update/<%= @user["id"]%>">Change</a><br>
+    <label for="role">Role: </label>
+    <input type="text" name = "role" value ="<%= @user["user_role"] %>" required><br>
+    <button>Submit</button>
+</form>

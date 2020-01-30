@@ -8,6 +8,7 @@
   </head>
   <body>
     <%if session[:role] != nil %>
+      <a href="/" class = "home-btn"><button>Home</button></a>
       <div>
         <form action="/session" method='post' class="logout">
           <input type="hidden" name="_method" value="delete">

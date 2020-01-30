@@ -7,12 +7,25 @@ def create_product(product_code,name,image_url,quantity_on_hand)
     run_sql(sql, [product_code,name,image_url,quantity_on_hand])
 end
 
-
 def find_by_product_code(product_code)
     sql = <<~SQL 
         select * from product where product_code = $1 ;
     SQL
     run_sql(sql,[product_code])[0]
+end
+
+def list_all_product()
+    sql = <<~SQL
+        select product_code,name from product;
+    SQL
+    run_sql(sql,[])
+end
+
+def show_all_product()
+    sql = <<~SQL
+        select * from product;
+    SQL
+    run_sql(sql,[])
 end
 
 def update_product(product_code,name,image_url,quantity_on_hand,old_code)

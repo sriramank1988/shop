@@ -1,14 +1,15 @@
+<h2>Admin Panel</h2>
 <div class="flexwrap">
     <div class="user">
         <div><h3>User options</h3></div>
         <a href="/user/create">Create a user</a><br>
-        <a href="/user/update">Update a user</a><br>
-        <a href="/user/delete">Delete a user</a><br>
+        <%# <a href="/user/update">Update a user</a><br>
+        <a href="/user/delete">Delete a user</a><br> %>
         <a href="/user/all">List all users</a>
     </div>
     <div class="order">
         <div><h3>order options</h3></div>
-        <a href="/order/view">Add new order</a><br>
+        <a href="/order/new">Add new order</a><br>
         <a href="/order/update">Change an order</a><br>
         <a href="/order/delete">Delete an order</a>
 
@@ -16,6 +17,7 @@
     <div class="product">
         <div><h3>product options</h3></div>
         <a href="/product/new">Add new product</a><br>
+        <a href="/product/all">View all product</a><br>
         <form action="/read" method="get">
                 Product code : <input type="text" name="pcode" required>
                 <button>Search</button>
