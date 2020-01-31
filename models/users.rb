@@ -28,6 +28,7 @@ def login_user(email, password)
         if session[:role] == 'admin'
             redirect '/admin'
         elsif session[:role] == 'customer'
+            initialize_cart()
             redirect '/customer'
         else
             redirect '/'
@@ -41,6 +42,14 @@ def admin_logged_in?
       return true
     else
       return false
+    end
+end
+
+def customer_logged_in?
+    if session[:user_id] != nil && session[:role] == 'customer'
+        return true
+    else
+        return false
     end
 end
  

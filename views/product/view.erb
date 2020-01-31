@@ -18,9 +18,12 @@
                 <button>delete</button>
             </form>
         <% else %>
-            <label for="quantity">Qty: </label>
-            <input type="text" name="quantiy" > <br><br>
-            <button>Add to cart</button>
+            <form action="/product/cart/add/<%= @product["product_code"]%>" method='post'>
+                <input type="hidden" name="_method" value="patch">
+                <label for="quantity">Qty: </label>
+                <input type="text" name="quantity" > <br><br>
+                <button>Add to cart</button>
+            </form>
         <% end %>
     </div>
 </div>

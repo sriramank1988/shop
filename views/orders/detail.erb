@@ -1,0 +1,20 @@
+<h2>Order Details </h2>
+<h2>Order Number: <%= @details[0]["order_id"]%></h2>
+<div class = "center">
+    <table>
+    <tr>
+        <th>Product ID</th>
+        <th>Quantity</th>
+        
+        <% if admin_logged_in?%>
+            <th>Options</th>
+        <% end %>
+    </tr>
+    <% @details.each do |detail| %>
+        <tr>
+            <td><%=detail['product_id']%></td>
+            <td><%=detail['quantity']%></td>
+        </tr>
+    <%end%>
+    </table>
+</div>

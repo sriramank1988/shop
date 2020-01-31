@@ -4,7 +4,7 @@ end
 
 post '/user/create' do
     if admin_logged_in?
-        binding.pry
+        #binding.pry
         create_user(params[:email],params[:psw],params[:role])
         redirect '/admin'
     else

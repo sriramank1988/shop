@@ -2,7 +2,7 @@ body .container{
     text-align: center;
     position: absolute;
     left: 40%;
-    top: 40%;  
+    top: 30%;  
     border: 3px solid black;
     padding: 50px;
 }
@@ -54,4 +54,15 @@ table, th, td {
 }
 h2{
     text-align: center;
+}
+.error_message{
+    text-align: center;
+    background-color: brown;
+    display: none;
+}
+.btn_center{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
 }

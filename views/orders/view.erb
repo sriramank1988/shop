@@ -1,0 +1,30 @@
+<h2>List of all orders</h2>
+<div class = "center">
+    <table>
+    <tr>
+        <th>Order ID</th>
+        <th>Status</th>
+        <th>Options</th>
+        <% if admin_logged_in?%>
+            <th>Delete</th>
+        <% end %>
+    </tr>
+    <% @orders.each do |order| %>
+        <tr>
+            <td><%=order['id']%></td>
+            <td><%=order['status']%></td>
+            <td><a href="/order/view/<%=order['id']%>">view </a>
+                <% if admin_logged_in?%>
+                	&nbsp;<a href="/order/update/<%= order['id']%>">Update</a>
+                <td>
+                    <form action="/order/delete/<%= order['id']%>" method='post'>
+                        <input type="hidden" name="_method" value="delete">
+                        <button>delete</button>
+                    </form>
+                </td>
+                <% end %>
+            </td>
+        </tr>
+    <%end%>
+    </table>
+</div>

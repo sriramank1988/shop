@@ -16,14 +16,14 @@ end
 
 def list_all_product()
     sql = <<~SQL
-        select product_code,name from product;
+        select product_code,name from product ORDER BY product_code;
     SQL
     run_sql(sql,[])
 end
 
 def show_all_product()
     sql = <<~SQL
-        select * from product;
+        select * from product ORDER BY product_code;
     SQL
     run_sql(sql,[])
 end
@@ -44,4 +44,14 @@ def delete_product(product_code)
         WHERE product_code = $1;
     SQL
     run_sql(sql,[product_code])
+end
+
+def update_quantity(product_code,quantity)
+    sql = <<~SQL
+        UPDATE product
+        SET quantity_on_hand = $1
+        WHERE product_code = $2;
+    SQL
+    #binding.pry
+    run_sql(sql,[quantity,product_code])
 end

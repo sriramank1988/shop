@@ -1,0 +1,21 @@
+<h2>View cart</h2>
+<table>
+    <tr>
+        <th>Product Code</th>
+        <th>Quantity</th>
+    </tr>    
+    <% session[:cart].each do |item| %>
+    <tr>
+        <th><%=item[:pcode]%></th>
+        <th><%=item[:quan]%></th>
+    </tr>
+    <% end%>
+</table>
+<br>
+<br>
+<div class ="btn_center">
+    <form action="/cart/submit" method='post'>
+        <button >Submit Order</button>
+    </form>
+</div>
+
